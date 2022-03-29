@@ -1,0 +1,161 @@
+.header {
+    padding-top: 50px;
+}
+
+.header-container {
+    align-items: center;
+	justify-content: space-between;
+}
+
+.header-logo-nav {
+    align-items: center;
+}
+
+.menu-device__wrap,
+.menu-device__block {
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu-list {
+    margin-left: 40px;
+}
+
+.menu-link {
+    font-weight: 700;
+    transition: 0.2s ease-in;
+}
+
+.menu-link:hover {
+    color: var(--logo-color);
+    transition: 0.2s ease-in;
+}
+
+.menu-item:not(:last-child) {
+    margin-right: 28px;
+}
+
+.button-header {
+    padding: 10px 22px;
+	font-size: 14px;
+	border: none;
+	border-radius: 50px;
+	color: var(--font-color);
+	font-weight: 700;
+	font-size: 18px;
+	cursor: pointer;
+	background-color: transparent;
+	transition: 0.2s ease-in;
+}
+
+
+.button-header:hover {
+	color: var(--white-color);
+	background-color: var(--button-hover-color);
+	border-radius: 50px;
+	transition: 0.2s ease-in;
+}
+
+.header-burger {
+	display: none;
+	cursor: pointer;
+}
+
+.burger-line {
+	width: 25px;
+	height: 3px;
+	background-color: var(--descr-color);
+}
+
+.burger-line:first-child {
+	margin-bottom: 5px;
+}
+
+.burger-line:last-child {
+	margin-top: 5px;
+}
+
+
+@media (max-width: 1100px) {
+
+	.header {
+		padding-top: 30px;
+	}
+
+	.header-burger {
+		display: block;
+	}
+
+	.menu-device__wrap {
+		top: 100px;
+		flex-direction: column;	
+		position: fixed;
+		left: 0;
+		transform: translateX(-250vh);
+		transition: all 0.3s;
+	}
+
+	.open-menu {
+		transform: translateX(0);
+		transition: all 0.3s;
+	}
+
+	.menu-device__block {
+		width: 92%;
+		margin: 0 auto;
+		flex-direction: column;
+		border-radius: 10px;
+		background-color: var(--purple-color);
+	}
+
+	.menu-device {
+		width: 90%;
+		margin: 0 auto;
+		border-bottom: 1px solid rgba(240, 241, 246, .1);
+	}
+
+	.menu-list {
+		margin: 0 auto;
+		padding: 20px 0;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.menu-item {
+		padding: 20px 0;
+	}
+
+	.menu-item:not(:last-child) {
+		margin-right: 0;
+	}
+
+	.menu-link,
+	.button-header {
+		color: var(--white-color);
+	}
+
+	.header-button {
+		width: 90%;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		flex-direction: column;
+	}
+
+	.button-header {
+		padding: 20px 0;
+	}
+
+	.mobile-style {
+		margin-top: 5px;
+		padding: 16px 34px;
+		border: none;
+		border-radius: 50px;
+		color: var(--white-color);
+		font-size: 18px;
+		cursor: pointer;
+		background-color: var(--button-background-color);
+		transition: 0.2s ease-in;
+	}
+
+}

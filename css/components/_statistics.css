@@ -1,0 +1,138 @@
+.statistics {
+    background-color: var(--section-background-color);
+}
+
+.statistics-container__wrap {
+    position: relative;
+}
+
+.statistics-title {
+    max-width: 536px;
+    margin: 0 auto;
+    padding: 115px 0 30px 0;
+    text-align: center;
+}
+
+.statistics-title h2 {
+    margin-bottom: 30px;
+    font-size: 37px;
+    color: var(--title-color);
+}
+
+.statistics-title p {
+    line-height: 30px;
+    color: #A2A1A6;
+}
+
+.statistics-block {
+    max-width: 350px;
+    padding: 0 32px;
+    align-self: start;
+    position: relative;
+    background-color: var(--white-color);
+    border-radius: 7px;
+}
+
+.statistics-block:nth-last-child(2) {
+    margin-top: 47px;
+}
+
+.statistics-block:last-child {
+    margin-top: 94px;
+}
+
+.statistics-container {
+    position: relative;
+    margin-top: 73px;
+    padding-bottom: 120px;
+    justify-content: space-between;
+}
+
+.statistics-container::before {
+    content:"";
+    width: 430px;
+    height: 10px;
+    background-color: var(--button-background-color);
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.statistics-icon {
+    position: absolute;
+    top: -43px;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--purple-color);
+}
+
+.recognition {
+    background-image: url(../../img/icon-brand-recognition.svg);
+}
+
+.records {
+    background-image: url(../../img/icon-detailed-records.svg);
+}
+
+.customizable {
+    background-image: url(../../img/icon-fully-customizable.svg);
+}
+
+.statistics-block__title {
+    padding: 80px 0 15px 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--title-color);
+}
+
+.statistics-block__descr {
+    padding-bottom: 40px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--descr-color);
+}
+
+
+@media (max-width: 1100px) {
+
+	.statistics-title {
+        padding-top: 76px;
+    }
+
+    .statistics-title h2 {
+        font-size: 31px;
+    }
+
+    .statistics-container {
+        flex-direction: column;
+    }
+
+    .statistics-block {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .statistics-block:nth-last-child(2) {
+        margin-top: 94px;
+    }
+    
+    .statistics-block:last-child {
+        margin-top: 94px;
+    }
+
+    .statistics-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -200%);
+    }
+
+    .statistics-container::before {
+        width: 10px;
+        height: 650px;
+    }
+}

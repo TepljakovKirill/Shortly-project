@@ -1,0 +1,30 @@
+.boost-links {
+    background-image: url(../../img/bg-boost-desktop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--purple-color);
+}
+
+.boost-links_container {
+    width: 100%;
+    height: 250px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.boost-links__title {
+    margin-bottom: 27px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+@media (max-width: 1100px) {
+
+    .boost-links__title {
+        font-size: 30px;
+    }
+	
+}
