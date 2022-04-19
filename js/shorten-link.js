@@ -5,32 +5,20 @@ let buttonShorten = document.querySelector('.button-shorten');
 buttonShorten.addEventListener('click', () => {
     let longLink = document.querySelector('.longLink').value;
 
-
-    const sendData = async (url, data) => {
-        const response = await fetch(url, {
+    async function sendData() {
+        let response = await fetch('https://api.shrtco.de/v2/', {
             method: 'POST',
-            body: JSON.stringify(data),
-        })
+            body: JSON.stringify(longLink)
+          });
 
-        if(!response.ok) {
-            throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`);
-        }
-        return await response.json();
-
+        let result = await response.text();
+        alert(result.message);
     }
 
-    sendData('https://api.shrtco.de/v2/', longLink);
+    sendData();
 
 
-     // const getData = async (url) => {
-    //     const response = await fetch(url);
-
-    //     if(!response.ok) {
-    //         throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`);
-    //     }
-    //     return await response.json();
-    // }
-
+    
     
 })
   
