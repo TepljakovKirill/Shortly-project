@@ -8,6 +8,10 @@
     flex-direction: column;
 }
 
+.wrap-block-link_container {
+    display: none;
+}
+
 .link-block {
     width: 100%;
     margin-bottom: 15px;
