@@ -3,8 +3,8 @@ let blockLinkContainer = document.querySelector('.block-link_container');
 let arrayChildren = [];
 
 
-buttonShorten.addEventListener('click', () => {
-
+buttonShorten.addEventListener('click', (e) => {
+    e.preventDefault();
     function createLink() {
         let children = document.querySelector('.block-link_container').children.length;
         arrayChildren.push(children);

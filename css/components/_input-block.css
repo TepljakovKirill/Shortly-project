@@ -26,14 +26,16 @@
     border: 3px solid transparent;
 }
 
-.shorten-form input:focus {
+
+
+/* .shorten-form input:focus {
     outline: none;
     border: 3px solid #E8676B;
-}
+} */
 
-.shorten-form input:focus::placeholder {
+/* .shorten-form input:focus::placeholder {
     color: #E8676B;
-}
+} */
 
 .button-shorten {
     width: 187px;
@@ -53,7 +55,7 @@
     left: 70px;
     color: #E8676B;
     font-size: 16px;
-    display: none;
+    opacity: 1;
 }
 
 @media (max-width: 1100px) {
