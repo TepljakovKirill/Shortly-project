@@ -17,7 +17,7 @@
     margin: 0 auto;
 }
 
-.shorten-form input {
+.longLink {
     width: 763px;
     height: 58px;
     padding-left: 30px;
@@ -26,16 +26,27 @@
     border: 3px solid transparent;
 }
 
-
-
-/* .shorten-form input:focus {
+.longLink:focus {
     outline: none;
-    border: 3px solid #E8676B;
-} */
+}
 
-/* .shorten-form input:focus::placeholder {
+.invaled-form {
+    border: 3px solid #E8676B;
+}
+
+.invaled-form::placeholder {
     color: #E8676B;
-} */
+}
+
+.input-prompt {
+    position: absolute;
+    font-style: italic;
+    bottom: 22px;
+    left: 70px;
+    color: #E8676B;
+    font-size: 16px;
+    opacity: 0;
+}
 
 .button-shorten {
     width: 187px;
@@ -48,15 +59,7 @@
     opacity: 0.6;
 }
 
-.input-prompt {
-    position: absolute;
-    font-style: italic;
-    bottom: 22px;
-    left: 70px;
-    color: #E8676B;
-    font-size: 16px;
-    opacity: 1;
-}
+
 
 @media (max-width: 1100px) {
 
