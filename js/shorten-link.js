@@ -1,31 +1,49 @@
-let buttonShorten = document.querySelector('.button-shorten');
+const buttonShorten = document.querySelector('.button-shorten');
+let blockLinkContainer = document.querySelector('.block-link_container');
 
+async function sendData() {
 
+    let longLink = document.querySelector('.longLink').value;
+    const newBlock = document.querySelector('.wrap-block-link_container');
+    const shortenLink = document.querySelector('.shorten-link');
 
-buttonShorten.addEventListener('click', () => {
-    const longLink = document.querySelector('.longLink').value;
-    async function sendData() {
-        let response = await fetch(`https://api.shrtco.de/v2/shorten?url=${longLink}`);
+    let response = await fetch(`https://api.shrtco.de/v2/shorten?url=${longLink}`);
+    let startLink = document.querySelector('.start-link');
+    const invalidAddress = document.querySelector('.longLink');
+    const inputPrompt = document.querySelector('.input-prompt');
 
-          if(!response.ok) {
-              alert('да хер там');
-          }
+    if(!response.ok) {
+        document.querySelector('.longLink').value = '';
+        invalidAddress.classList.add('invalid-form');
+        inputPrompt.style.opacity = 1;
 
+    } else {
         let result = await response.json();
-          // result - текст, у него нет свойства message
-        //alert(result.message);
-        alert(result.result.short_link);
-    }
+        const newBlockLinkContainer = document.querySelector('.wrap-block-link_container');
+        const newBlockLink = newBlockLinkContainer.cloneNode(true);
 
+        blockLinkContainer.appendChild(newBlockLink);
+
+        invalidAddress.classList.remove('invalid-form');
+        inputPrompt.style.opacity = 0;
+        newBlock.style.display = 'block';
+
+        startLink.textContent = longLink;
+        shortenLink.textContent = result.result.short_link;
+        document.querySelector('.longLink').value = '';
+
+    }
+}
+
+
+buttonShorten.addEventListener('click', (e) => {
+    e.preventDefault();
+    //немного сократила, и плюс лучше сперва добавить а потом удалять, если что-то добавилось
     sendData();
 
+    // Я НЕ ИСПОЛЬЗУЮ ЗДЕСЬ ПЕРЕМЕННУЮ ПОТОМУ ЧТО В НЕЙ ЛЕЖИТ ПРЕДЫДУЩЕЕ КОЛ-ВО ССЫЛОК
+    if(document.querySelector('.wrap-block-link_container').children.length > 3) {
+        blockLinkContainer.lastChild.remove();
+    }
 
-
-    // async function getData() {
-    //     let response = await fetch('https://api.shrtco.de/v2/info?code=example');
-    //     let link = await response.text();
-    //     alert(link);
-    // }
-
-    // getData();
 })

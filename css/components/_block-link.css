@@ -5,7 +5,12 @@
 
 .block-link_container {
     padding-top: 120px;
+    overflow: hidden;
     flex-direction: column;
+}
+
+.wrap-block-link_container {
+    display: none;
 }
 
 .link-block {
